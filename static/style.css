@@ -1,0 +1,98 @@
+/* akoang css, gisagol sagol ra nako ni, nanguha kog idea sa youtube hehe */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* light gray, limpyo tan-awon */
+    margin: 0;
+    padding: 20px;
+}
+
+/* ang puti nga box sa tunga */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* para naay gamay nga shadow */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 15px; /* gi gamayan nako kay murag dako ra tan-awon */
+}
+
+/* ang form kung asa mag add ug task */
+.add-form {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.add-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* green kay nice tan-awon hehe */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* kung i-hover ang mouse, medyo mo dark */
+.add-form button:hover {
+    background-color: #45a049;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+/* kung nahuman na, naay line sa tunga */
+.task-list li.done span {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.task-list span {
+    flex: 1;
+}
+
+.check, .delete {
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.empty {
+    text-align: center;
+    color: #888;
+}

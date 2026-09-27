@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <!-- kani nga css file, naa sa static folder -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>My To-Do List 📝</h1>
+        <!-- murag counter ba, pila na nahuman -->
+        <p class="subtitle">{{ done_count }} of {{ total }} nahuman na, padayon! 💪</p>
+
+        <form action="/add" method="POST" class="add-form">
+            <!-- dri mag type ug bag-o nga task -->
+            <input type="text" name="task" placeholder="Unsa imo buhaton? type dri..." required>
+            <button type="submit">Add</button>
+        </form>
+
+        {% if tasks %}
+        <ul class="task-list">
+            {% for task in tasks %}
+            <li class="{% if task.done %}done{% endif %}">
+                <!-- pislita ni para ma check -->
+                <a href="/toggle/{{ loop.index0 }}" class="check">
+                    {% if task.done %}✅{% else %}⬜{% endif %}
+                </a>
+                <span>{{ task.text }}</span>
+                <!-- pang delete ni, amping kay dritso ra ni mawala -->
+                <a href="/delete/{{ loop.index0 }}" class="delete">❌</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <!-- if walay tasks -->
+        <p class="empty">Wala nay task! Pahulay sa 😎 or add ug bag-o 👆</p>
+        {% endif %}
+
+        <p class="footer">Gibuhat nako gamit Python + Flask 🐍 - first project nako hehe</p>
+    </div>
+</body>
+</html>
